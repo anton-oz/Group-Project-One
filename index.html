@@ -7,24 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1 class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl  p-4">Mental Health Title</h1>
+
+    <header class="bg-gray-100">
+        <h1 class="text-center mb-4 p-4 text-6xl font-extrabold">Mental Health Title</h1>
     </header>
 
     <nav>
         <ul class="text-2xl grid grid-cols-3 justify-items-center">
-            <a href="">
-                <li>
-                    1st Page
+            <a href="activity.html">
+                <li class="px-3 bg-red-600 font-semibold rounded m-2 cursor-pointer">
+                    Activity
                 </li>
             </a>
             <a href="">
-                <li>
+                <li class="px-3 bg-red-600 font-semibold rounded m-2 cursor-pointer">
                     2nd Page
                 </li>
             </a>
             <a href="">
-                <li>
+                <li class="px-3 bg-red-600 font-semibold rounded m-2 cursor-pointer">
                     3rd Page
                 </li>
             </a>
@@ -43,17 +44,35 @@
 
         <form class="w-1/2 flex flex-col items-center justify-center border-2 border-solid border-indigo-500">
             <h2>How are you doing?</h2>
-            <label for="howDoing">How was your</label>
+        
+            <label for="howDoing">How was your day?</label>
             <input type="text" ></input><br>
-            <label for="yes_no_radio">"Would you like to do an activity?"</label>
+        
+            <label for="yes_no_radio">Would you like to do an activity?</label>
             <input type="radio" name="yesOrno"> Yes </input>
             <input type="radio" name="yesOrno"> No </input><br>
-            <input type="submit" value="Complete"/>
+        
+            <label for="activityDrop">What type of activity?</label>
+            <select name="typesActivity" id="typeAct">
+                <option value="education">Educational</option>
+                <option value="recreational">Recreational</option>
+                <option value="social">Social</option>
+                <option value="diy">D.I.Y</option>
+                <option value="charity">Charity</option>
+                <option value="cooking">Cooking</option>
+                <option value="relaxation">Relaxing</option>
+                <option value="music">Music</option>
+                <option value="busywork">Busywork</option>
+            </select><br>
+        
+            <button type="submit" value="Complete">Complete</button>
+        
         </form>
     
     </main>
     
 
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/activity.js"></script>
 </body>
 </html>
