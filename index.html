@@ -40,17 +40,35 @@
 
         <form>
             <h2>How are you doing?</h2>
-            <label for="howDoing">How was your</label>
+        
+            <label for="howDoing">How was your day?</label>
             <input type="text" ></input><br>
-            <label for="yes_no_radio">"Would you like to do an activity?"</label>
+        
+            <label for="yes_no_radio">Would you like to do an activity?</label>
             <input type="radio" name="yesOrno"> Yes </input>
             <input type="radio" name="yesOrno"> No </input><br>
-            <input type="submit" value="Complete"/>
+        
+            <label for="activityDrop">What type of activity?</label>
+            <select name="typesActivity" id="typeAct">
+                <option value="education">Educational</option>
+                <option value="recreational">Recreational</option>
+                <option value="social">Social</option>
+                <option value="diy">D.I.Y</option>
+                <option value="charity">Charity</option>
+                <option value="cooking">Cooking</option>
+                <option value="relaxation">Relaxing</option>
+                <option value="music">Music</option>
+                <option value="busywork">Busywork</option>
+            </select><br>
+        
+            <button type="submit" value="Complete">Complete</button>
+        
         </form>
     
     </main>
     
 
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/activity.js"></script>
 </body>
 </html>
