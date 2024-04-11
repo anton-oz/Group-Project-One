@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1 class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white p-4">Mental Health Title</h1>
+        <h1 class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl  p-4">Mental Health Title</h1>
     </header>
 
     <nav>
@@ -31,14 +31,17 @@
         </ul>
     </nav>
 
-    <main>
-        <div>
-            <p id="affirmation">
+    <main class="flex flex-wrap h-80">
+        <div class="w-1/2 flex flex-col justify-center border-2 border-solid border-indigo-500">
+            <p id="affirmation" class="text-center italic">
                 Affirmations Quote
+            </p>
+            <p id="author" class="text-center italic font-bold">
+                Author Name
             </p>
         </div>
 
-        <form>
+        <form class="w-1/2 flex flex-col items-center justify-center border-2 border-solid border-indigo-500">
             <h2>How are you doing?</h2>
             <label for="howDoing">How was your</label>
             <input type="text" ></input><br>
