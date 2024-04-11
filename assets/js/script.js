@@ -18,7 +18,7 @@ fetch(url)
         pEl2.textContent = `~${data.author}`
     });
 
-    });
+
 
 
 var typeChoice = document.getElementById("typeAct")
