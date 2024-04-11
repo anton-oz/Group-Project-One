@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <header class="bg-gray-100">
         <h1 class="text-center mb-4 p-4 text-6xl font-extrabold">Mental Health Title</h1>
     </header>
@@ -31,14 +32,17 @@
         </ul>
     </nav>
 
-    <main>
-        <div>
-            <p id="affirmation">
+    <main class="flex flex-wrap h-80">
+        <div class="w-1/2 flex flex-col justify-center border-2 border-solid border-indigo-500">
+            <p id="affirmation" class="text-center italic">
                 Affirmations Quote
+            </p>
+            <p id="author" class="text-center italic font-bold">
+                Author Name
             </p>
         </div>
 
-        <form>
+        <form class="w-1/2 flex flex-col items-center justify-center border-2 border-solid border-indigo-500">
             <h2>How are you doing?</h2>
         
             <label for="howDoing">How was your day?</label>
