@@ -1,8 +1,6 @@
 const url = 'https://api.quotable.io/random'
-const submitButton = document.getElementById("submit");
-
+let submitButton = document.getElementById("formButton");
 let pEl = document.getElementById('affirmation')
-
 let pEl2 = document.getElementById('author')
 
 
@@ -20,15 +18,11 @@ fetch(url)
 
 
 
-
-var typeChoice = document.getElementById("typeAct")
-localStorage.setItem("userChoice", JSON.stringify(document.getElementById("typeAct")));
-
-    submitButton.addEventListener("click", function(event){
-        event.preventDefault();
-        var userSubmit = {
-            "activityType" : typeChoice.value,
-        }
-    
-     });
+submitButton.addEventListener("click", function(event){
+    event.preventDefault();
+    let userSubmit = document.getElementById("typeAct").value;
+    localStorage.setItem("userChoice", userSubmit);
+    window.location.href = "activity.html";
+    return true;
+});
 
