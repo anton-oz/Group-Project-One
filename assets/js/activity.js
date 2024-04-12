@@ -3,14 +3,14 @@ let userSubmit = localStorage.getItem("userChoice");
 let actURL =`http://www.boredapi.com/api/activity?type=${userSubmit}`;
 let weatherURL = "http://wttr.in?format=j1";
 const actDiv = document.getElementsByClassName("activityFig");
-document.body.onload = addActFig;
 
 fetch (actURL) 
     .then(function(response) {
         return response.json();
     })
     .then(function (data) {
-        activity = localStorage.setItem("activity", data.activity);
+        localStorage.setItem("activity", data.activity);
+        addActFig();
     });
 
 function addActFig() {
@@ -25,14 +25,16 @@ fetch (weatherURL)
         return response.json();
     })
     .then(function (weather) {
-        console.log(weather);
-        feelsLike = localStorage.setItem("feelsLike", weather.current_condition[0].FeelsLikeF);
+        console.log(weather.current_condition[0].FeelsLikeF);
+        const feelsLike = weather.current_condition[0].FeelsLikeF
+        localStorage.setItem("feelsLike", feelsLike);
         console.log(feelsLike);
+        addWeatherApi();
     });
 
     function addWeatherApi() {
         let localWeather = localStorage.getItem("weather");
         const newDiv = document.createElement("div");
-        newDiv.innerHTML = `We recommend you try: ${localWeather}!`;
-        document.getElementById("weatherFig").appendChild(newDiv);
+        // newDiv.innerHTML = `We recommend you try: ${localWeather}!`;
+        // document.getElementById("weatherFig").appendChild(newDiv);
     }
