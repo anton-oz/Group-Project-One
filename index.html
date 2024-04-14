@@ -3,9 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
+<body class="bg-stone-800 text-white">
+
+    <header class="">
+        <h1 class="text-center mb-4 p-4 text-6xl font-extrabold">Mental Health Title</h1>
+    </header>
+
+
+    <nav class="py-4">
+        <ul class="text-xl grid grid-cols-3 justify-items-center">
+            <a href="activity.html" class="ltr">
+                <li class="text-white p-2 px-10 bg-stone-500 shadow-lg shadow-stone-500/50 font-semibold rounded-s-lg m-2 cursor-pointer">
+                    Activity
+                </li>
+            </a>
+            <a href="">
+                <li class="text-white p-2 px-8 bg-stone-600 shadow-lg shadow-stone-500/50 font-semibold m-2 cursor-pointer">
+                    2nd Page
+                </li>
+            </a>
+            <a href="">
+                <li class="text-white p-2 px-10 bg-stone-700 shadow hover:shadow-xl shadow-stone-500/50 font-semibold rounded-lg m-2 cursor-pointer">
+                    3rd Page
+                </li>
+            </a>
+        </ul>
+    </nav>
+
+    <main class="flex flex-col items-center m-4 h-full">
+        <div class="h-fit w-2/5 m-6 p-4 shadow-2xl shadow-emerald-400/50 flex flex-col justify-center items-center border-4 border-solid rounded-lg border-emerald-600 bg-stone-600">
+            <p id="affirmation" class="text-center italic">
+                Affirmations Quote
+            </p>
+            <p id="author" class="text-center italic font-bold">
+                Author Name
+            </p>
+        </div>
+
+        <form class="h-fit w-fit m-6 p-4 shadow-2xl shadow-emerald-400/50 flex flex-col items-center justify-center border-4 border-solid rounded-lg border-emerald-600 bg-stone-600">
+            <h2>How are you doing?</h2>
+        
+            <label for="howDoing">How was your day?</label>
+            <input type="text" ></input><br>
+        
+            <label for="yes_no_radio">Would you like to do an activity?</label>
+            <input type="radio" name="yesOrno"> Yes </input>
+            <input type="radio" name="yesOrno"> No </input><br>
+        
+            <label for="activityDrop">What type of activity?</label>
+            <select name="typesActivity" id="typeAct">
+                <option value="">Select Activity</option>
+                <option value="education">Educational</option>
+                <option value="recreational">Recreational</option>
+                <option value="social">Social</option>
+                <option value="diy">D.I.Y</option>
+                <option value="charity">Charity</option>
+                <option value="cooking">Cooking</option>
+                <option value="relaxation">Relaxing</option>
+                <option value="music">Music</option>
+                <option value="busywork">Busywork</option>
+            </select><br>
+        
+            <button id="formButton" type="submit" value="Complete">Complete</button>
+        
+        </form>
     
+    </main>
+    
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/activity.js"></script>
 </body>
 </html>
