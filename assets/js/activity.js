@@ -1,16 +1,17 @@
 //Generates an activity based on desired type (i.e. relaxation, social, etc...)
-let userSubmit = localStorage.getItem("userChoice");
+let userSubmit = JSON.parse(localStorage.getItem("userChoice"));
 let actURL =`http://www.boredapi.com/api/activity?type=${userSubmit}`;
 let weatherURL = "http://wttr.in?format=j1";
 const actDiv = document.getElementsByClassName("activityFig");
-document.body.onload = addActFig;
 
 fetch (actURL) 
     .then(function(response) {
         return response.json();
     })
     .then(function (data) {
+        console.log(data)
         activity = localStorage.setItem("activity", data.activity);
+        addActFig();
     });
 
 function addActFig() {
@@ -43,13 +44,9 @@ fetch (weatherURL)
         weatherDiv.innerHTML = `It is ${localWeatherDesc} today<br>
         Temp: ${localWeather}<br>
         Feels Like: ${localFeelsLike}<br>
-        Humidity: ${localHumidity}<br>
-        
-
-
-        
-        `;
+        Humidity: ${localHumidity}<br> `;
         document.getElementById("weatherFig").appendChild(weatherDiv);
     }
 
     addWeatherApi();
+
