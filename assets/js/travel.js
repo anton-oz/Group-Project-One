@@ -1,7 +1,7 @@
-let randomCityButton = document.getElementById('randomBtn')
+let randomCityButton = document.getElementById('randomBtn');
 
 
-randomCityButton.addEventListener('click', tester)
+randomCityButton.addEventListener('click', tester);
 
 
 let x = false;
@@ -21,6 +21,8 @@ function resetter() {
     }
 }
 
+setDefaultBg();
+
 let backgroundImgUrl;
 
 function getRandomCity() {
@@ -33,7 +35,7 @@ function getRandomCity() {
     })
     .then(function(data) {
         console.log('ya: ', data.geonames)
-        let i = Math.floor(Math.random() * 20);
+        let i = Math.floor(Math.random() * data.geonames.length);
         let city = data.geonames[i].name
         let country = data.geonames[i].countrycode
         console.log(`${city}, ${country}`)
@@ -96,3 +98,20 @@ function setBackground(url) {
     bodyEl.style.backgroundImage = `url(${url})`
     bodyEl.style.backgroundSize = 'cover'
 }
+
+function setDefaultBg() {
+    const defaultBg = [
+        'https://images.unsplash.com/photo-1548574505-5e239809ee19?ixid=M3w1OTA4OTZ8MHwxfHNlYXJjaHwxfHxiYWhhbWFzfGVufDB8MHx8fDE3MTMyMzIyMTh8MA&ixlib=rb-4.0.3',
+        'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixid=M3w1OTA4OTZ8MHwxfHNlYXJjaHwyfHxtb3VudGFpbnN8ZW58MHwwfHx8MTcxMzIzMjM4OXww&ixlib=rb-4.0.3',
+        'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixid=M3w1OTA4OTZ8MHwxfHNlYXJjaHwyfHxtYXNzaXZlJTJDY2l0eXxlbnwwfDB8fHwxNzEzMjMyNjM2fDA&ixlib=rb-4.0.3',
+        'https://images.unsplash.com/photo-1442120108414-42e7ea50d0b5?ixid=M3w1OTA4OTZ8MHwxfHNlYXJjaHw2fHxqdW5nbGV8ZW58MHwwfHx8MTcxMzIzMjY3Nnww&ixlib=rb-4.0.3'
+    ];
+
+    document.body.style.backgroundImage = `url(${randomIndex()})`;
+    document.body.style.backgroundSize = 'cover';
+
+    function randomIndex() {
+        const randomIndex = Math.floor(Math.random() * defaultBg.length);
+        return defaultBg[randomIndex];
+    };
+};
