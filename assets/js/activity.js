@@ -32,9 +32,22 @@ fetch (weatherURL)
         addWeatherApi();
     });
 
+    
+
     function addWeatherApi() {
-        let localWeather = localStorage.getItem("weather");
-        const newDiv = document.createElement("div");
-        // newDiv.innerHTML = `We recommend you try: ${localWeather}!`;
-        // document.getElementById("weatherFig").appendChild(newDiv);
+        let localWeather = localStorage.getItem("actualTemp");
+        let localHumidity = localStorage.getItem("humidity")
+        let localFeelsLike = localStorage.getItem("feelsLike")
+        let localWeatherDesc= localStorage.getItem("weatherDesc")
+        
+        const weatherDiv = document.createElement("div");
+        weatherDiv.innerHTML = `It is ${localWeatherDesc} today<br>
+        Temp: ${localWeather}<br>
+        Feels Like: ${localFeelsLike}<br>
+        Humidity: ${localHumidity}<br> `;
+        document.getElementById("weatherFig").appendChild(weatherDiv);
     }
+
+    // addWeatherApi();
+
+
