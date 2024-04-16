@@ -9,8 +9,7 @@ fetch (actURL)
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
-        activity = localStorage.setItem("activity", data.activity);
+        localStorage.setItem("activity", data.activity);
         addActFig();
     });
 
@@ -26,13 +25,14 @@ fetch (weatherURL)
         return response.json();
     })
     .then(function (weather) {
-        console.log(weather);
-        feelsLike = localStorage.setItem("feelsLike", weather.current_condition[0].FeelsLikeF);
+        console.log(weather.current_condition[0].FeelsLikeF);
+        const feelsLike = weather.current_condition[0].FeelsLikeF
+        localStorage.setItem("feelsLike", feelsLike);
         console.log(feelsLike);
-        humidity = localStorage.setItem("humidity", weather.current_condition[0].humidity);
-        actualTemp = localStorage.setItem("actualTemp", weather.current_condition[0].temp_F);
-        weatherDesc = localStorage.setItem("weatherDesc", weather.current_condition[0].weatherDesc[0].value);
+        addWeatherApi();
     });
+
+    
 
     function addWeatherApi() {
         let localWeather = localStorage.getItem("actualTemp");
@@ -48,5 +48,6 @@ fetch (weatherURL)
         document.getElementById("weatherFig").appendChild(weatherDiv);
     }
 
-    addWeatherApi();
+    // addWeatherApi();
+
 
