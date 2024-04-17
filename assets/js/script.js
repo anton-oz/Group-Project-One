@@ -34,6 +34,7 @@ fetch(url)
         }
     }
 
+// THIS IS WHAT THE BUTTON USED TO DO BEFORE MODAL IDEA
 // submitButton.addEventListener("click", function(event){
 //     event.preventDefault();
 //     const usersName = document.getElementById("userName").value;
@@ -47,30 +48,4 @@ fetch(url)
 //         let userSubmit = document.getElementById("typeAct").value;
 //         localStorage.setItem("userChoice", JSON.stringify(userSubmit));
 //     }
-// });
-
-// const form = document.getElementById('landingPageForm');
-// const modal = document.getElementById('myModal');
-// const closeModal = document.getElementById('closeModal');
-// const modalEl = document.getElementById('modalContent');
-
-// form.addEventListener('submit', function (event) {
-//     event.preventDefault();
-
-//     let user = document.getElementById('userName');
-//     let userInput = user.value;
-//     // let activity = document.getElementById('typeAct');
-//     // let activityInput = activity.value;
-
-//     let modalName = document.createElement('p');
-//     modalName.textContent = "Hi " + userInput + ", welcome to the shit show." + userSubmit;
-//     modalEl.append(modalName);
-
-//     modal.classList.remove('hidden');
-// });
-
-// closeModal.addEventListener('click', function () {
-//     modalEl.textContent = "";
-//     modal.classList.add('hidden');
-
 // });
