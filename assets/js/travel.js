@@ -1,7 +1,24 @@
-let randomCityButton = document.getElementById('randomBtn');
+const randomCityButton = document.getElementById('randomBtn');
+const cityContentEl = document.getElementById('cityContent');
+const cityNameEl = document.getElementById('cityName');
+const populationEl = document.getElementById('population');
+const searchForm = document.getElementById('searchBar');
+const searchQuery = document.getElementById('searchQuery')
 
 
 randomCityButton.addEventListener('click', tester);
+
+searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (searchQuery.value) {
+        searchForCity(searchQuery.value)
+        searchQuery.value = '';
+    }
+    // searchForCity(searchQuery);
+})
+
+
+cityContentEl.style.display = 'none';
 
 
 let x = false;
@@ -16,30 +33,66 @@ function tester(event) {
 function resetter() {
     if (x) {
         getRandomCity()
-        console.log(backgroundImgUrl)
         x = false
     }
 }
 
 setDefaultBg();
 
-let backgroundImgUrl;
+function searchForCity(search) {
+    const url = `http://api.geonames.org/searchJSON?q=${search.split(' ').join('-')}&maxRows=10&lang=en&username=tonton`
+
+    console.log(url)
+
+    fetch(url)
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data)
+        let city = data.geonames[0].name
+        let country = data.geonames[0].countryName
+        let popNum = data.geonames[0].population
+        let popNumFormat = popNum.toLocaleString()
+        cityNameEl.textContent = `City: ${city}, ${country}`
+        populationEl.textContent = `Population: ${popNumFormat}`
+        cityContentEl.style.display = 'flex'
+
+        return backgroundImage(city.split(' ').join(''), country)
+    })
+
+}
+
+
+
+
+
 
 function getRandomCity() {
 
-    const url = `http://api.geonames.org/citiesJSON?north=${randomLatitude()}&south=${randomLatitude()}&east=${randomLongitude()}&west=${randomLongitude()}&lang=en&maxRows=20&username=tonton`;
+    const url = `http://api.geonames.org/citiesJSON?north=${randomLatitude()}&south=${randomLatitude()}&east=${randomLongitude()}&west=${randomLongitude()}&lang=en&maxRows=50&page=1&username=tonton`;
 
     fetch(url)
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
+        if(!data.geonames) {
+            return console.log('no good :(')
+        }
         console.log('ya: ', data.geonames)
         let i = Math.floor(Math.random() * data.geonames.length);
         let city = data.geonames[i].name
         let country = data.geonames[i].countrycode
-        console.log(`${city}, ${country}`)
-        return backgroundImage(city, country)
+        let popNum = data.geonames[i].population
+        let popNumFormat = popNum.toLocaleString()
+        cityNameEl.textContent = `City: ${city}, ${country}`
+        populationEl.textContent = `Population: ${popNumFormat}`
+
+        cityContentEl.style.display = 'flex'
+
+
+        return backgroundImage(city.split(' ').join(''), country)
     })
     
     
@@ -75,7 +128,7 @@ function backgroundImage(city, country) {
     let imgUrl;
 
     fetch(url, {
-        headers:{
+        headers: {
             'Authorization': `Client-ID ${apiKey}`
         }
     })
@@ -84,7 +137,8 @@ function backgroundImage(city, country) {
     })
     .then(function (data) {
         console.log(data)
-        imgUrl = data.results[0].urls.raw
+        let i = Math.floor(Math.random() * data.results.length);
+        imgUrl = data.results[i].urls.raw
         return imgUrl
     })
     .then(function (data2) {
@@ -93,11 +147,16 @@ function backgroundImage(city, country) {
     //return backgroundImgUrl
 }
 
+
+// function to consolidate fetch request
+
 function setBackground(url) {
     let bodyEl = document.getElementById('body');
     bodyEl.style.backgroundImage = `url(${url})`
     bodyEl.style.backgroundSize = 'cover'
 }
+
+// Sets the background when page loads
 
 function setDefaultBg() {
     const defaultBg = [
