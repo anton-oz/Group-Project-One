@@ -51,3 +51,26 @@ fetch (weatherURL)
     // addWeatherApi();
 
 
+// Modal Element
+const modal = document.getElementById('weatherModal');
+
+// Button for Modal pop up
+const weatherBtn = document.getElementById('openWeatherModal');
+
+// Close the modal button
+const closeWeatherBtn = document.getElementsByClassName("close")[0];
+
+// Opens weather modal on click
+weatherBtn.addEventListener("click", function (){
+    modal.style.display = "block";
+});
+
+closeWeatherBtn.addEventListener("click", function(){
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", function(e){
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+});
