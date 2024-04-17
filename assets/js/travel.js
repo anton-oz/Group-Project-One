@@ -58,7 +58,7 @@ function searchForCity(search) {
         populationEl.textContent = `Population: ${popNumFormat}`
         cityContentEl.style.display = 'flex'
 
-        return backgroundImage(city.split(' ').join(''), country)
+        return backgroundImage(city.split(' ').join(''), country.split(' ').join(''))
     })
 
 }
@@ -92,7 +92,7 @@ function getRandomCity() {
         cityContentEl.style.display = 'flex'
 
 
-        return backgroundImage(city.split(' ').join(''), country)
+        return backgroundImage(city.split(' ').join('-'), country.split(' ').join('-'))
     })
     
     
@@ -121,7 +121,7 @@ function getRandomCity() {
 function backgroundImage(city, country) {
     const apiKey = '7neOXH1FCj_WvQfXsBI7Sc0ZVdO7jxDeRLW9Z2wODfc';
 
-    const url = `https://api.unsplash.com/search/photos?query=${city},${country}&orientation=landscape&page=1&per_page=10`
+    const url = `https://api.unsplash.com/search/photos?query=${city}-${country}&orientation=landscape&page=1&per_page=10`
 
     console.log(`img url: ${url}`)
 
