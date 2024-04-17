@@ -40,7 +40,7 @@ function resetter() {
 setDefaultBg();
 
 function searchForCity(search) {
-    const url = `http://api.geonames.org/searchJSON?q=${search.split(' ').join('-')}&maxRows=10&lang=en&username=tonton`
+    const url = `https://secure.geonames.org/searchJSON?q=${search.split(' ').join('-')}&maxRows=10&lang=en&username=tonton`
 
     console.log(url)
 
@@ -70,7 +70,7 @@ function searchForCity(search) {
 
 function getRandomCity() {
 
-    const url = `http://api.geonames.org/citiesJSON?north=${randomLatitude()}&south=${randomLatitude()}&east=${randomLongitude()}&west=${randomLongitude()}&lang=en&maxRows=50&page=1&username=tonton`;
+    const url = `https://secure.geonames.org/citiesJSON?north=${randomLatitude()}&south=${randomLatitude()}&east=${randomLongitude()}&west=${randomLongitude()}&lang=en&maxRows=50&page=1&username=tonton`;
 
     fetch(url)
     .then(function(response) {
