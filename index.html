@@ -43,20 +43,26 @@
         </div>
 
         <form class="h-fit w-fit m-6 p-4 shadow-2xl shadow-emerald-400/50 flex flex-col items-center justify-center border-4 border-solid rounded-lg border-emerald-600 bg-stone-600">
-            <h2>How are you doing?</h2>
-        
-            <label for="howDoing">How was your day?</label>
-            <input type="text" class="text-black" id="" /><br>
+            <h2>Daily Check-In</h2><br>
 
-            
-        
-            <label for="yes_no_radio">Would you like to do an activity?</label>
-            <input type="radio" name="yesOrno"> Yes </input>
-            <input type="radio" name="yesOrno"> No </input><br>
-        
-            <label for="activityDrop">What type of activity?</label>
+            <label for="askForName">What would you like us to call you?</label>
+            <input id="userName" class="text-black" type="text" placeholder="Preferred Name"><br>
+
+            <label for="howDoing">How was your day?</label>
+            <input type="radio" id="veryBad" name="feelingsScale" value="veryBad"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.775 16.368a1 1 0 0 1-1.55 1.264 4 4 0 0 0-6.45 0 1 1 0 1 1-1.55-1.264 6 6 0 0 1 9.55 0zM23 12A11 11 0 1 1 12 1a11.013 11.013 0 0 1 11 11zm-2 0a9 9 0 1 0-9 9 9.01 9.01 0 0 0 9-9zm-4-3a1 1 0 0 1-2 0 1 1 0 0 0-2 0 3 3 0 0 0 6 0 1 1 0 0 0-2 0zm-6 0a1 1 0 0 0-2 0 1 1 0 0 1-2 0 1 1 0 0 0-2 0 3 3 0 0 0 6 0z"/></svg>
+            <label for="veryBad">Very Bad</label>
+            <input type="radio" id="poor" name="feelingsScale" value="poor"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 11V9a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm7 1a1 1 0 0 0 1-1V9a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1zm-3 2a6.036 6.036 0 0 0-4.775 2.368 1 1 0 1 0 1.55 1.264 4 4 0 0 1 6.45 0 1 1 0 0 0 1.55-1.264A6.036 6.036 0 0 0 12 14zm11-2A11 11 0 1 1 12 1a11.013 11.013 0 0 1 11 11zm-2 0a9 9 0 1 0-9 9 9.01 9.01 0 0 0 9-9z"/></svg>
+            <label for="poor">Poor</label>
+            <input type="radio" id="medium" name="feelingsScale" value="medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9v2a1 1 0 0 1-2 0V9a1 1 0 0 1 2 0zm5-1a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1zm8 4A11 11 0 1 1 12 1a11.013 11.013 0 0 1 11 11zm-2 0a9 9 0 1 0-9 9 9.01 9.01 0 0 0 9-9z"/></svg>
+            <label for="medium">Neutral</label>
+            <input type="radio" id="good" name="feelingsScale" value="good"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.011 9.011 0 0 1-9 9zm6-8a6 6 0 0 1-12 0 1 1 0 0 1 2 0 4 4 0 0 0 8 0 1 1 0 0 1 2 0zM8 10V9a1 1 0 0 1 2 0v1a1 1 0 0 1-2 0zm6 0V9a1 1 0 0 1 2 0v1a1 1 0 0 1-2 0z"/></svg>
+            <label for="good">Good</label>
+            <input type="radio" id="excellent" name="feelingsScale" value="excellent"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16a4.045 4.045 0 0 0 3.225-1.632 1 1 0 1 1 1.55 1.264 6 6 0 0 1-9.55 0 1 1 0 0 1 1.55-1.264A4.045 4.045 0 0 0 12 16zM1 12a11 11 0 1 1 11 11A11.013 11.013 0 0 1 1 12zm2 0a9 9 0 1 0 9-9 9.01 9.01 0 0 0-9 9zm11 0a1 1 0 0 0 1-1 1 1 0 0 1 2 0 1 1 0 0 0 2 0 3 3 0 0 0-6 0 1 1 0 0 0 1 1zm-7-1a1 1 0 0 1 2 0 1 1 0 0 0 2 0 3 3 0 0 0-6 0 1 1 0 0 0 2 0z"/></svg>
+            <label for="excellent">Excellent</label><br>
+
+            <label for="activityDrop">Would you like to do an activity?</label><br>
             <select name="typesActivity" class="text-black" id="typeAct">
-                <option value="">Select Activity</option>
+                <option value="">No Thanks</option>
                 <option value="education">Educational</option>
                 <option value="recreational">Recreational</option>
                 <option value="social">Social</option>

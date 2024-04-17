@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Override Tailwind Button Styling -->
-    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/travel.css">
     <title>Travel</title>
 </head>
 <body id="body" class="bg-stone-100 text-black">
@@ -24,26 +30,43 @@
         </ul>
     </nav>
 
-    <main class="grid grid-cols-2 flex justify-center min-h-96">
+    <main class="grid grid-cols-3 flex justify-center min-h-96">
 
-
-        <div class="flex justify-center items-center">
-            <button type="button" id="randomBtn"class="p-3 text-3xl rounded bg-emerald-400 ease-out transition duration-700 shadow hover:shadow-2xl active:bg-emerald-600 active:text-amber-50 active:duration active:shadow w-fit h-fit">Random City</button>
+        <!-- Random City Button -->
+        <div class="relative flex justify-center items-center">
+            <div class="w-max h-fit p-3 rounded-lg opacity">
+                <button type="button" id="randomBtn" class="w-max p-3 text-3xl font-bold rounded opacity1 ease-out transition duration-700 shadow hover:shadow-2xl active:bg-stone-600 active:text-amber-50 active:duration active:shadow w-fit h-fit">Random City</button>
+            </div>
         </div>
 
-        <!-- Form Needs ability to enter country information and other options -->
+        <!-- City content -->
+        <div class="relative flex justify-center items-center" id="cityContent">
+            <div class="w-max h-fit p-3 rounded-lg opacity">
+                <div class="w-max h-fit p-3 flex flex-col justify-center items-center opacity1">
+                    <p class="text-black font-bold" id="cityName"></p>
+                    <p class="text-black font-bold" id="population"></p>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!-- City Search -->
         <div class="flex justify-center items-center">
-            <form>
-                <label class="relative block">
-                    <span class="sr-only">Search</span>
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                    <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-                    </svg>
-                    </span>
-                    <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
-                </label>
-            </form>
+            <div class="w-max h-fit p-3 rounded-lg opacity">
+                <form id="searchBar">
+                    <label class="relative block">
+                        <span class="sr-only">Search</span>
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                        <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                        </svg>
+                        </span>
+                        <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for a city..." type="text" name="search" id="searchQuery"/>
+                    </label>
+                </form>
+            </div>
         </div>
     </main>
     

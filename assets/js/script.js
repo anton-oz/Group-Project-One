@@ -1,10 +1,7 @@
 const url = 'https://api.quotable.io/random'
-let submitButton = document.getElementById("formButton");
-let pEl = document.getElementById('affirmation')
-let pEl2 = document.getElementById('author')
-
-let activityType = document.getElementById('')
-
+var submitButton = document.getElementById("formButton");
+var pEl = document.getElementById('affirmation')
+var pEl2 = document.getElementById('author')
 
 fetch(url)
     .then(function(response) {
@@ -18,13 +15,36 @@ fetch(url)
         pEl2.textContent = `~${data.author}`
     });
 
+    function displayRadioValue() {
+        var inputs = document.getElementsByName('feelingsScale');
 
+        for (i = 0; i < inputs.length; i++) {
+            if (inputs[i].checked)
+                if (inputs[i].value == "veryBad") {
+                    console.log("a");
+                } else if (inputs[i].value == "poor"){
+
+                } else if (inputs[i].value == "medium"){
+
+                } else if (inputs[i].value == "good"){
+
+                } else if (inputs[i].value == "excellent"){
+                   
+                }
+        }
+    }
 
 submitButton.addEventListener("click", function(event){
     event.preventDefault();
-    let userSubmit = document.getElementById("typeAct").value;
-    localStorage.setItem("userChoice", JSON.stringify(userSubmit));
-    window.location.replace("./activity.html");
-    //return true;
-});
+    const usersName = document.getElementById("userName").value;
+    localStorage.setItem("user", JSON.stringify(usersName));
+    
+    displayRadioValue();
 
+    if (document.getElementById("typeAct").value === "") {
+
+    } else {
+        let userSubmit = document.getElementById("typeAct").value;
+        localStorage.setItem("userChoice", JSON.stringify(userSubmit));
+    }
+});
