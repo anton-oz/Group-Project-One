@@ -34,17 +34,18 @@ fetch(url)
         }
     }
 
-submitButton.addEventListener("click", function(event){
-    event.preventDefault();
-    const usersName = document.getElementById("userName").value;
-    localStorage.setItem("user", JSON.stringify(usersName));
+// THIS IS WHAT THE BUTTON USED TO DO BEFORE MODAL IDEA
+// submitButton.addEventListener("click", function(event){
+//     event.preventDefault();
+//     const usersName = document.getElementById("userName").value;
+//     localStorage.setItem("user", JSON.stringify(usersName));
     
-    displayRadioValue();
+//     displayRadioValue();
 
-    if (document.getElementById("typeAct").value === "") {
+//     if (document.getElementById("typeAct").value === "") {
 
-    } else {
-        let userSubmit = document.getElementById("typeAct").value;
-        localStorage.setItem("userChoice", JSON.stringify(userSubmit));
-    }
-});
+//     } else {
+//         let userSubmit = document.getElementById("typeAct").value;
+//         localStorage.setItem("userChoice", JSON.stringify(userSubmit));
+//     }
+// });
