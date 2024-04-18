@@ -8,14 +8,14 @@ const errorModal = document.getElementById('errorModal');
 const closeModal = document.getElementById('closeModal');
 const closeModal2 = document.getElementById('closeModal2');
 
-// event listener for modal X button
+// Event listener for modal X button
 closeModal.addEventListener('click', function(e) {
     e.preventDefault();
     errorModal.classList.add('hidden');
     return;
 });
 
-// random button
+// Button that randomly generates cities from the geo API
 randomCityButton.addEventListener('click', getRandomCity);
 
 // search form 
@@ -27,11 +27,11 @@ searchForm.addEventListener('submit', function(e) {
     }
 })
 
-// hide div that displays current city on page load
+// Hides div that displays current city on page load
 cityContentEl.style.display = 'none';
 
 
-// set default background on page when loaded / reloaded
+// Sets default background on page when loaded / reloaded
 setDefaultBg();
 
 // Function to take search input and fetch matching city name
@@ -62,7 +62,7 @@ function searchForCity(search) {
     })
 }
 
-// random city fetch
+// Random city fetch function from geo API
 function getRandomCity(e) {
     e.preventDefault();
 
@@ -111,7 +111,7 @@ function getRandomCity(e) {
     }
 }
 
-// set background image of page to the city that was fetched
+// Set background image of page to the city that was fetched
 function backgroundImage(city, country) {
     const apiKey = '7neOXH1FCj_WvQfXsBI7Sc0ZVdO7jxDeRLW9Z2wODfc';
 
@@ -142,7 +142,7 @@ function backgroundImage(city, country) {
 }
 
 
-// function to consolidate image fetch request
+// Function to consolidate image fetch request
 function setBackground(url) {
     let bodyEl = document.getElementById('body');
     bodyEl.style.backgroundImage = `url(${url})`
