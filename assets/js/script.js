@@ -35,17 +35,18 @@ fetch(url)
     }
 
 // THIS IS WHAT THE BUTTON USED TO DO BEFORE MODAL IDEA
-// submitButton.addEventListener("click", function(event){
-//     event.preventDefault();
-//     const usersName = document.getElementById("userName").value;
-//     localStorage.setItem("user", JSON.stringify(usersName));
+submitButton.addEventListener("click", function(event){
+    event.preventDefault();
+    // const usersName = document.getElementById("userName").value;
+    // localStorage.setItem("user", JSON.stringify(usersName));
     
-//     displayRadioValue();
+    // displayRadioValue();
 
-//     if (document.getElementById("typeAct").value === "") {
-
-//     } else {
-//         let userSubmit = document.getElementById("typeAct").value;
-//         localStorage.setItem("userChoice", JSON.stringify(userSubmit));
-//     }
-// });
+    if (document.getElementById("typeAct").value === "") {
+        window.location.href = "travel.html";
+    } else {
+        let userSubmit = document.getElementById("typeAct").value;
+        localStorage.setItem("userChoice", JSON.stringify(userSubmit));
+        window.location.href = "activity.html";
+    }
+});
