@@ -22,33 +22,10 @@
         </div>
     </header>
 
-    <!-- <nav class="py-4">
-        <ul class="text-xl grid grid-cols-3 justify-items-center">
-            <a href="activity.html">
-                <li
-                    class="text-white p-2 px-10 bg-stone-600 shadow hover:shadow-xl shadow-stone-100/50 font-semibold rounded-lg m-2 cursor-pointer">
-                    Activity
-                </li>
-            </a>
-            <a href="./travel.html">
-                <li
-                    class="text-white p-2 px-10 bg-stone-600 shadow hover:shadow-xl shadow-stone-100/50 font-semibold rounded-lg m-2 cursor-pointer">
-                    Travel
-                </li>
-            </a>
-            <a href="">
-                <li
-                    class="text-white p-2 px-10 bg-stone-600 shadow hover:shadow-xl shadow-stone-100/50 font-semibold rounded-lg m-2 cursor-pointer">
-                    3rd Page
-                </li>
-            </a>
-        </ul>
-    </nav> -->
-
     <main class="flex flex-col items-center m-4 h-full">
-        <div class="p-4 flex justify-center items-center rounded-lg opacity">
-            <div class=" p-3 flex flex-col justify-center items-center rounded-lg opacity1 text-black "> 
-                <p id="affirmation" class="text-center italic w-fit">
+        <div class="w-2/5 p-4 flex justify-center items-center rounded-lg opacity">
+            <div class="w-fit p-3 flex flex-col justify-center items-center rounded-lg opacity1 text-black "> 
+                <p id="affirmation" class="text-center italic w-fit text-2xl">
                     Affirmations Quote
                 </p>
                 <p id="author" class="text-center italic font-bold">
@@ -60,47 +37,6 @@
         <!-- Form for collecting user's information -->
         <form id="landingPageForm"
             class="h-fit w-fit m-6 p-4  rounded-lg border-emerald-600 opacity">
-            <!-- <h2>Daily Check-In</h2><br> -->
-
-            <!-- Input what the user's name is -->
-            <!-- <label for="askForName">What would you like us to call you?</label> -->
-            <!-- <input id="userName" class="text-black" type="text" placeholder="Preferred Name"><br> -->
-
-            <!-- Radio selector for how user's day is going -->
-            <!-- <label for="howDoing">How was your day?</label>
-            <input type="radio" id="veryBad" name="feelingsScale" value="veryBad"><svg class="h-20 w-20"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M16.775 16.368a1 1 0 0 1-1.55 1.264 4 4 0 0 0-6.45 0 1 1 0 1 1-1.55-1.264 6 6 0 0 1 9.55 0zM23 12A11 11 0 1 1 12 1a11.013 11.013 0 0 1 11 11zm-2 0a9 9 0 1 0-9 9 9.01 9.01 0 0 0 9-9zm-4-3a1 1 0 0 1-2 0 1 1 0 0 0-2 0 3 3 0 0 0 6 0 1 1 0 0 0-2 0zm-6 0a1 1 0 0 0-2 0 1 1 0 0 1-2 0 1 1 0 0 0-2 0 3 3 0 0 0 6 0z" />
-            </svg>
-            <label for="veryBad">Very Bad</label>
-            <input type="radio" id="poor" name="feelingsScale" value="poor"><svg class="h-20 w-20"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M8 11V9a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm7 1a1 1 0 0 0 1-1V9a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1zm-3 2a6.036 6.036 0 0 0-4.775 2.368 1 1 0 1 0 1.55 1.264 4 4 0 0 1 6.45 0 1 1 0 0 0 1.55-1.264A6.036 6.036 0 0 0 12 14zm11-2A11 11 0 1 1 12 1a11.013 11.013 0 0 1 11 11zm-2 0a9 9 0 1 0-9 9 9.01 9.01 0 0 0 9-9z" />
-            </svg>
-            <label for="poor">Poor</label>
-            <input type="radio" id="medium" name="feelingsScale" value="medium"><svg class="h-20 w-20"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M10 9v2a1 1 0 0 1-2 0V9a1 1 0 0 1 2 0zm5-1a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1zm8 4A11 11 0 1 1 12 1a11.013 11.013 0 0 1 11 11zm-2 0a9 9 0 1 0-9 9 9.01 9.01 0 0 0 9-9z" />
-            </svg>
-            <label for="medium">Neutral</label>
-            <input type="radio" id="good" name="feelingsScale" value="good"><svg class="h-20 w-20"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.011 9.011 0 0 1-9 9zm6-8a6 6 0 0 1-12 0 1 1 0 0 1 2 0 4 4 0 0 0 8 0 1 1 0 0 1 2 0zM8 10V9a1 1 0 0 1 2 0v1a1 1 0 0 1-2 0zm6 0V9a1 1 0 0 1 2 0v1a1 1 0 0 1-2 0z" />
-            </svg>
-            <label for="good">Good</label>
-            <input type="radio" id="excellent" name="feelingsScale" value="excellent"><svg class="h-20 w-20"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 16a4.045 4.045 0 0 0 3.225-1.632 1 1 0 1 1 1.55 1.264 6 6 0 0 1-9.55 0 1 1 0 0 1 1.55-1.264A4.045 4.045 0 0 0 12 16zM1 12a11 11 0 1 1 11 11A11.013 11.013 0 0 1 1 12zm2 0a9 9 0 1 0 9-9 9.01 9.01 0 0 0-9 9zm11 0a1 1 0 0 0 1-1 1 1 0 0 1 2 0 1 1 0 0 0 2 0 3 3 0 0 0-6 0 1 1 0 0 0 1 1zm-7-1a1 1 0 0 1 2 0 1 1 0 0 0 2 0 3 3 0 0 0-6 0 1 1 0 0 0 2 0z" />
-            </svg>
-            <label for="excellent">Excellent</label><br> -->
-
-
-
             <div class="w-max h-fit p-3 flex flex-col justify-center items-center rounded-lg opacity1 text-black font-bold">
                 <label for="activityDrop">Would you like to do an activity?</label><br>
             <select name="typesActivity" class="text-black border-2 border-black rounded" id="typeAct">
@@ -121,43 +57,6 @@
 
         </form>
 
-        <!-- BELOW IS NEW IDEA FOR MODAL TO POP UP ON SUBMIT -->
-        <!-- Modal -->
-        <!-- <div id="myModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-            <div class="bg-white text-black p-8 rounded shadow-md">
-                <p id="modalContent"></p>
-                <button id="closeModal" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Close</button>
-            </div>
-        </div> -->
-
-        <!-- <script>
-            const form = document.getElementById('landingPageForm');
-            const moodal = document.getElementById('myModal');
-            const closeModal = document.getElementById('closeModal');
-            const modalEl = document.getElementById('modalContent');
-
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                let user = document.getElementById('userName');
-                let userInput = user.value;
-
-                let modalName = document.createElement('p');
-                modalName.textContent = "Hi " + userInput + ", welcome to the page. Based on your selection, check out the activity page to see your recommended activity. If you clicked 'No thanks,' we recommend you check out the travel page to get a change of scenery!";
-                modalEl.append(modalName);
-
-                moodal.classList.remove('hidden');
-
-
-            });
-
-            closeModal.addEventListener('click', function () {
-                modalEl.textContent = "";
-                moodal.classList.add('hidden');
-
-            });
-        </script> -->
-        <!-- ABOVE IS NEW IDEA FOR MODAL TO POP UP ON SUBMIT -->
 
     </main>
 
