@@ -3,7 +3,24 @@ const cityContentEl = document.getElementById('cityContent');
 const cityNameEl = document.getElementById('cityName');
 const populationEl = document.getElementById('population');
 const searchForm = document.getElementById('searchBar');
-const searchQuery = document.getElementById('searchQuery')
+const searchQuery = document.getElementById('searchQuery');
+const errorModal = document.getElementById('errorModal');
+const closeModal = document.getElementById('closeModal');
+const closeModal2 = document.getElementById('closeModal2');
+
+
+closeModal.addEventListener('click', function(e) {
+    e.preventDefault();
+    errorModal.classList.add('hidden');
+    return;
+});
+
+closeModal2.addEventListener('click', function(e) {
+    e.preventDefault();
+    errorModal.classList.add('hidden');
+    return
+})
+
 
 
 randomCityButton.addEventListener('click', tester);
@@ -49,6 +66,10 @@ function searchForCity(search) {
         return response.json()
     })
     .then(function (data) {
+        if(data.geonames.length === 0) {
+            errorModal.classList.remove('hidden');
+            return
+        }
         console.log(data)
         let city = data.geonames[0].name
         let country = data.geonames[0].countryName
