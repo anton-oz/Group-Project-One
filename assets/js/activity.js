@@ -1,7 +1,7 @@
 //Generates an activity based on desired type (i.e. relaxation, social, etc...)
 let userSubmit = JSON.parse(localStorage.getItem("userChoice"));
-let actURL =`http://www.boredapi.com/api/activity?type=${userSubmit}`;
-let weatherURL = "http://wttr.in?format=j1";
+let actURL =`https://www.boredapi.com/api/activity?type=${userSubmit}`;
+let weatherURL = "https://wttr.in?format=j1";
 const actDiv = document.getElementsByClassName("activityFig");
 
 fetch (actURL) 
