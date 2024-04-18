@@ -25,9 +25,20 @@ fetch (weatherURL)
         return response.json();
     })
     .then(function (weather) {
+        console.log(weather)
         console.log(weather.current_condition[0].FeelsLikeF);
+        // feels like temp set
         const feelsLike = weather.current_condition[0].FeelsLikeF
         localStorage.setItem("feelsLike", feelsLike);
+        // actual temp set
+        const actualTemp = weather.current_condition[0].temp_F
+        localStorage.setItem("actualTemp", actualTemp)
+        // humidity set
+        const actualHumidity = weather.current_condition[0].humidity
+        localStorage.setItem('humidity', actualHumidity)
+        // weather description set
+        const localWeatherDesc = weather.current_condition[0].weatherDesc[0].value
+        localStorage.setItem('weatherDesc', localWeatherDesc)
         console.log(feelsLike);
     });
 
