@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
     <title>PsycheScape</title>
 </head>
 
 <body class="text-white">
 
-    <header>
-        <h1 class="text-center mb-4 p-4 text-6xl font-extrabold">PsycheScape</h1>
+    <header class="p-3 flex justify-center items-center">
+        <div class="w-max h-fit p-3 rounded-lg opacity">
+            <h1 class="text-center p-6 text-6xl font-extrabold rounded-lg opacity1 text-black">PsycheScape</h1>
+        </div>
     </header>
 
     <!-- <nav class="py-4">
@@ -39,19 +46,20 @@
     </nav> -->
 
     <main class="flex flex-col items-center m-4 h-full">
-        <div
-            class="h-fit w-2/5 m-6 p-4 shadow-2xl shadow-emerald-400/50 flex flex-col justify-center items-center border-4 border-solid rounded-lg border-emerald-600 bg-stone-600">
-            <p id="affirmation" class="text-center italic">
-                Affirmations Quote
-            </p>
-            <p id="author" class="text-center italic font-bold">
-                Author Name
-            </p>
+        <div class="p-4 flex justify-center items-center rounded-lg opacity">
+            <div class=" p-3 flex flex-col justify-center items-center rounded-lg opacity1 text-black "> 
+                <p id="affirmation" class="text-center italic w-fit">
+                    Affirmations Quote
+                </p>
+                <p id="author" class="text-center italic font-bold">
+                    Author Name
+                </p>
+            </div>
         </div>
 
         <!-- Form for collecting user's information -->
         <form id="landingPageForm"
-            class="h-fit w-fit m-6 p-4 shadow-2xl shadow-emerald-400/50 flex flex-col items-center justify-center border-4 border-solid rounded-lg border-emerald-600 bg-stone-600">
+            class="h-fit w-fit m-6 p-4  rounded-lg border-emerald-600 opacity">
             <!-- <h2>Daily Check-In</h2><br> -->
 
             <!-- Input what the user's name is -->
@@ -93,8 +101,9 @@
 
 
 
-            <label for="activityDrop">Would you like to do an activity?</label><br>
-            <select name="typesActivity" class="text-black" id="typeAct">
+            <div class="w-max h-fit p-3 flex flex-col justify-center items-center rounded-lg opacity1 text-black font-bold">
+                <label for="activityDrop">Would you like to do an activity?</label><br>
+            <select name="typesActivity" class="text-black border-2 border-black rounded" id="typeAct">
                 <option value="">Travel</option>
                 <option value="education">Educational</option>
                 <option value="recreational">Recreational</option>
@@ -107,7 +116,8 @@
                 <option value="busywork">Busywork</option>
             </select><br>
 
-            <button id="formButton" type="submit" value="Complete">Complete</button>
+            <button id="formButton" class="border-2 border-slate-800 p-1 rounded-md hover:border-slate-900 hover:bg-slate-800 hover:text-white" type="submit" value="Complete">Complete</button>
+            </div>
 
         </form>
 

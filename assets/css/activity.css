@@ -5,3 +5,17 @@
     border: 1px solid #888;
     color: black;
   }
+
+  body {
+    font-family: "Montserrat", serif;
+    background-image: url('../images/activityBackground.jpg');
+    background-size: cover;
+  }
+
+  .opacity {
+    background-color:#89858592;
+  }
+  
+  .opacity1 {
+    background-color: rgba(255, 255, 255, 0.861);
+  }
