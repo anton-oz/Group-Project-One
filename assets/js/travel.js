@@ -8,54 +8,33 @@ const errorModal = document.getElementById('errorModal');
 const closeModal = document.getElementById('closeModal');
 const closeModal2 = document.getElementById('closeModal2');
 
-
+// event listener for modal X button
 closeModal.addEventListener('click', function(e) {
     e.preventDefault();
     errorModal.classList.add('hidden');
     return;
 });
 
-// closeModal2.addEventListener('click', function(e) {
-//     e.preventDefault();
-//     errorModal.classList.add('hidden');
-//     return
-// })
+// random button
+randomCityButton.addEventListener('click', getRandomCity);
 
-
-
-randomCityButton.addEventListener('click', tester);
-
+// search form 
 searchForm.addEventListener('submit', function(e) {
     e.preventDefault();
     if (searchQuery.value) {
         searchForCity(searchQuery.value)
         searchQuery.value = '';
     }
-    // searchForCity(searchQuery);
 })
 
-
+// hide div that displays current city on page load
 cityContentEl.style.display = 'none';
 
 
-let x = false;
-
-function tester(event) {
-    event.preventDefault();
-    x = true;
-    resetter()
-}
-
-
-function resetter() {
-    if (x) {
-        getRandomCity()
-        x = false
-    }
-}
-
+// set default background on page when loaded / reloaded
 setDefaultBg();
 
+// Function to take search input and fetch matching city name
 function searchForCity(search) {
     const url = `https://secure.geonames.org/searchJSON?q=${search.split(' ').join('-')}&maxRows=10&lang=en&username=tonton`
 
@@ -81,15 +60,11 @@ function searchForCity(search) {
 
         return backgroundImage(city.split(' ').join(''), country.split(' ').join(''))
     })
-
 }
 
-
-
-
-
-
-function getRandomCity() {
+// random city fetch
+function getRandomCity(e) {
+    e.preventDefault();
 
     const url = `https://secure.geonames.org/citiesJSON?north=${randomLatitude()}&south=${randomLatitude()}&east=${randomLongitude()}&west=${randomLongitude()}&lang=en&maxRows=50&page=1&username=tonton`;
 
@@ -107,19 +82,17 @@ function getRandomCity() {
         let country = data.geonames[i].countrycode
         let popNum = data.geonames[i].population
         let popNumFormat = popNum.toLocaleString()
+
+        // display content about the city on the page
         cityNameEl.textContent = `City: ${city}, ${country}`
         populationEl.textContent = `Population: ${popNumFormat}`
-
         cityContentEl.style.display = 'flex'
 
 
         return backgroundImage(city.split(' ').join('-'), country.split(' ').join('-'))
     })
     
-    
-
-    // North + South Values
-
+    // Random North + South Values
     function randomLatitude() {
         let randomNum = Math.random() * (90 - (-90)) + (-90);
 
@@ -128,7 +101,7 @@ function getRandomCity() {
         return rounded;
     }
 
-    // East + West Values
+    // Random East + West Values
     function randomLongitude() {
         let randomNum = Math.random() * (180 - (-180)) + (-180);
 
@@ -138,7 +111,7 @@ function getRandomCity() {
     }
 }
 
-
+// set background image of page to the city that was fetched
 function backgroundImage(city, country) {
     const apiKey = '7neOXH1FCj_WvQfXsBI7Sc0ZVdO7jxDeRLW9Z2wODfc';
 
@@ -169,8 +142,7 @@ function backgroundImage(city, country) {
 }
 
 
-// function to consolidate fetch request
-
+// function to consolidate image fetch request
 function setBackground(url) {
     let bodyEl = document.getElementById('body');
     bodyEl.style.backgroundImage = `url(${url})`
@@ -178,7 +150,6 @@ function setBackground(url) {
 }
 
 // Sets the background when page loads
-
 function setDefaultBg() {
     const defaultBg = [
         'https://images.unsplash.com/photo-1548574505-5e239809ee19?ixid=M3w1OTA4OTZ8MHwxfHNlYXJjaHwxfHxiYWhhbWFzfGVufDB8MHx8fDE3MTMyMzIyMTh8MA&ixlib=rb-4.0.3',
