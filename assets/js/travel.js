@@ -15,11 +15,11 @@ closeModal.addEventListener('click', function(e) {
     return;
 });
 
-closeModal2.addEventListener('click', function(e) {
-    e.preventDefault();
-    errorModal.classList.add('hidden');
-    return
-})
+// closeModal2.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     errorModal.classList.add('hidden');
+//     return
+// })
 
 
 
