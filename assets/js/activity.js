@@ -29,11 +29,9 @@ fetch (weatherURL)
         const feelsLike = weather.current_condition[0].FeelsLikeF
         localStorage.setItem("feelsLike", feelsLike);
         console.log(feelsLike);
-        addWeatherApi();
     });
 
     
-
     function addWeatherApi() {
         let localWeather = localStorage.getItem("actualTemp");
         let localHumidity = localStorage.getItem("humidity")
@@ -41,14 +39,14 @@ fetch (weatherURL)
         let localWeatherDesc= localStorage.getItem("weatherDesc")
         
         const weatherDiv = document.createElement("div");
-        weatherDiv.innerHTML = `It is ${localWeatherDesc} today<br>
-        Temp: ${localWeather}<br>
-        Feels Like: ${localFeelsLike}<br>
-        Humidity: ${localHumidity}<br> `;
+        weatherDiv.innerHTML = `The weather in your area today is: ${localWeatherDesc}<br>
+        Temp: ${localWeather}°F<br>
+        Feels Like: ${localFeelsLike}°F<br>
+        Humidity: ${localHumidity}%<br> `;
         document.getElementById("weatherFig").appendChild(weatherDiv);
     }
 
-    // addWeatherApi();
+    addWeatherApi();
 
 
 // Modal Element
