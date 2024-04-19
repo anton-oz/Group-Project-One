@@ -1,4 +1,4 @@
-# Group-Project-One
+# PyscheScape
 Application for mental health motivation. 
 
 ## Description
