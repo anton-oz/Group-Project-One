@@ -1,4 +1,4 @@
-# PyscheScape
+# PsycheScape
 Application for mental health motivation. 
 
 ## Description
